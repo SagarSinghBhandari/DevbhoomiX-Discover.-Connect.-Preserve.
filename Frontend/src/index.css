@@ -1,0 +1,131 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: 42 33% 97%;
+  --foreground: 150 18% 12%;
+  --card: 40 40% 99%;
+  --card-foreground: 150 18% 12%;
+  --popover: 40 40% 99%;
+  --popover-foreground: 150 18% 12%;
+  --primary: 152 38% 24%;
+  --primary-foreground: 42 40% 97%;
+  --secondary: 38 28% 92%;
+  --secondary-foreground: 150 18% 16%;
+  --muted: 40 22% 93%;
+  --muted-foreground: 150 8% 38%;
+  --accent: 199 42% 36%;
+  --accent-foreground: 42 40% 97%;
+  --destructive: 8 62% 42%;
+  --destructive-foreground: 42 40% 97%;
+  --border: 40 18% 84%;
+  --input: 40 18% 84%;
+  --ring: 152 38% 24%;
+  --saffron: 24 72% 46%;
+  --earth: 28 32% 32%;
+  --radius: 0.85rem;
+  --chart-1: 152 38% 28%;
+  --chart-2: 199 42% 40%;
+  --chart-3: 24 72% 46%;
+  --chart-4: 28 32% 42%;
+  --chart-5: 150 12% 50%;
+}
+
+.dark {
+  --background: 150 16% 8%;
+  --foreground: 42 24% 94%;
+  --card: 150 14% 11%;
+  --card-foreground: 42 24% 94%;
+  --popover: 150 14% 11%;
+  --popover-foreground: 42 24% 94%;
+  --primary: 152 28% 62%;
+  --primary-foreground: 150 20% 10%;
+  --secondary: 150 10% 16%;
+  --secondary-foreground: 42 24% 92%;
+  --muted: 150 10% 16%;
+  --muted-foreground: 42 12% 68%;
+  --accent: 199 36% 52%;
+  --accent-foreground: 150 20% 10%;
+  --destructive: 8 55% 55%;
+  --destructive-foreground: 42 24% 96%;
+  --border: 150 10% 18%;
+  --input: 150 10% 18%;
+  --ring: 152 28% 62%;
+  --saffron: 24 70% 58%;
+  --earth: 28 24% 62%;
+  --chart-1: 152 28% 56%;
+  --chart-2: 199 36% 52%;
+  --chart-3: 24 70% 58%;
+  --chart-4: 28 24% 62%;
+  --chart-5: 42 16% 70%;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-saffron: hsl(var(--saffron));
+  --color-earth: hsl(var(--earth));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --font-serif: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+.aipan-border {
+  background-image: repeating-linear-gradient(
+    90deg,
+    hsl(var(--saffron) / 0.35) 0 8px,
+    transparent 8px 16px
+  );
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.map-wrap .leaflet-container {
+  background: hsl(var(--muted));
+  font-family: inherit;
+}
